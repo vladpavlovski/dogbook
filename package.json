@@ -6,13 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "lint": "eslint ."
   },
   "author": "Vlad",
   "license": "ISC",
-  "dependencies": {
-    "koa": "^2.11.0"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -22,9 +20,12 @@
     "*.js": [
       "prettier --write",
       "eslint --fix",
-      "stylelint",
       "git add"
     ]
+  },
+  "repository": "https://github.com/vladpavlovski/dogbook.git",
+  "dependencies": {
+    "koa": "^2.11.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -36,6 +37,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.8"
+    "lint-staged": "^10.0.8",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
   }
 }
