@@ -19,8 +19,7 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "repository": "https://github.com/vladpavlovski/dogbook.git",
