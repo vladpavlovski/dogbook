@@ -1,22 +1,22 @@
 module.exports = {
-  extends: ["eslint:recommended", "standard", "prettier"],
+  extends: ['eslint:recommended', 'standard', 'prettier'],
   root: true,
   env: {
     browser: true,
     commonjs: true,
     es6: true,
     jest: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    ecmaVersion: 6,
-    sourceType: "module",
+    ecmaVersion: 8,
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
-  plugins: ["import", "node", "promise", "standard", "prettier"],
+  plugins: ['import', 'node', 'promise', 'standard', 'prettier'],
   rules: {
-    "func-names": "off"
-  }
-};
+    'func-names': 'off',
+  },
+}
