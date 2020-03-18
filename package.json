@@ -24,13 +24,17 @@
   },
   "repository": "https://github.com/vladpavlovski/dogbook.git",
   "dependencies": {
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
     "jsonschema": "^1.2.5",
+    "jsonwebtoken": "^8.5.1",
     "kcors": "^2.2.2",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-compress": "^3.0.0",
     "koa-router": "^8.0.8",
-    "pino": "^5.17.0"
+    "pino": "^5.17.0",
+    "ramda": "^0.27.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
