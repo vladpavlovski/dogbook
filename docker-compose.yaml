@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  database:
+    image: sameersbn/postgresql:latest
+    container_name: dogbook-db
+    environment:
+      - DB_NAME=dogbook-db-local
+      - PG_TRUST_LOCALNET=true
+    ports:
+      - '5432:5432'
