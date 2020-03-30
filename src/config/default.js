@@ -49,6 +49,8 @@ module.exports = (env) => ({
   },
   database: {
     client: 'pg',
-    connection: 'postgres://postgres@localhost:5432/dogbook-db-local',
+    connection:
+      process.env.DATABASE_URL ||
+      'postgres://postgres@localhost:5432/dogbook-db-local',
   },
 })
