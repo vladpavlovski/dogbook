@@ -2,11 +2,10 @@
 
 const pino = require('pino')
 const app = require('../../package.json')
-// const config = require('../config')
+const config = require('../config')
 
 module.exports = pino({
   name: app.name,
-  prettyPrint: { colorize: true },
-  // level: config.logger.minLevel,
-  // enabled: config.logger.enabled,
+  level: config.logger.minLevel,
+  enabled: config.logger.enabled,
 })

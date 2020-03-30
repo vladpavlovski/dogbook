@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['eslint:recommended', 'standard', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'standard',
+    'prettier',
+    'plugin:mocha/recommended',
+  ],
   root: true,
   env: {
     browser: true,
@@ -7,15 +12,16 @@ module.exports = {
     es6: true,
     jest: true,
     node: true,
+    mocha: true,
   },
   parserOptions: {
-    ecmaVersion: 8,
+    ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
   },
-  plugins: ['import', 'node', 'promise', 'standard', 'prettier'],
+  plugins: ['import', 'node', 'promise', 'standard', 'prettier', 'mocha'],
   rules: {
     'func-names': 'off',
   },

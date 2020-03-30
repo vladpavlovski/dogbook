@@ -1,6 +1,5 @@
 'use strict'
 
-const errors = require('../utils/errors')
 const { User } = require('../database/models')
 
 /**
@@ -16,13 +15,8 @@ function findAll() {
  * @param {Number} id User id
  * @return {Promise<User>}
  */
-async function findById(id) {
-  const user = await User.query().findById(id)
-
-  if (!user) {
-    throw new errors.NotFoundError()
-  }
-  return user
+function findById(id) {
+  return User.query().findById(id)
 }
 
 /**
@@ -30,14 +24,12 @@ async function findById(id) {
  * @param {String} email User email
  * @return {Promise<User>}
  */
-async function findByEmail(email) {
-  const user = await User.query()
-    .where('email', email)
-    .first()
-  if (!user) {
-    throw new errors.NotFoundError()
-  }
-  return user
+function findByEmail(email) {
+  return User.query().where('email', email).first()
+}
+
+function patchById(id, data) {
+  return User.query().patch(data).where({ id })
 }
 
 /**
@@ -56,6 +48,7 @@ async function create(attributes) {
 }
 
 module.exports = {
+  patchById,
   findAll,
   findById,
   findByEmail,

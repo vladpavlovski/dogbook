@@ -1,6 +1,5 @@
 'use strict'
 
-const errors = require('../utils/errors')
 const { Dog } = require('../database/models')
 
 /**
@@ -16,13 +15,8 @@ function findAll() {
  * @param {Number} id record id
  * @return {Promise<Dog>}
  */
-async function findById(id) {
-  const dog = await Dog.query().findById(id)
-
-  if (!dog) {
-    throw new errors.NotFoundError()
-  }
-  return dog
+function findById(id) {
+  return Dog.query().findById(id)
 }
 
 /**

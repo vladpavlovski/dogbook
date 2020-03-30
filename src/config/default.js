@@ -3,7 +3,7 @@
 
 const pkg = require('../../package')
 
-module.exports = env => ({
+module.exports = (env) => ({
   env,
   appName: pkg.name,
   version: pkg.version,
@@ -43,6 +43,7 @@ module.exports = env => ({
     },
   },
   logger: {
+    enabled: true,
     stdout: true,
     minLevel: 'debug',
   },
