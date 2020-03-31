@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "migrate:make": "knex migrate:make --knexfile ./src/database/knexfile.js",
     "db:migrate": "knex migrate:latest --knexfile ./src/database/knexfile.js",
+    "db:seed": "knex seed:run --knexfile ./src/database/knexfile.js",
     "db:rollback": "knex migrate:rollback --knexfile ./src/database/knexfile.js",
     "infra": "docker-compose up -d",
     "infra:stop": "docker-compose down"
