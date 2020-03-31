@@ -24,7 +24,7 @@ install:
   - npm install
 
 before_script:
-  - sudo service postgresql stop
+  - service postgresql stop
   - docker ps
   - npm run infra
   - sleep 5
@@ -38,7 +38,7 @@ after_success:
 
 deploy:
   - provider: heroku
-    skip_cleanup: true
+    cleanup: true
     api_key:
       secure: 'aw1F/35ZZlDue6ve2t9X9MKWiP8F+ltiJ2JXTjA/Sdn9tJ5Cmf/zSeDLx8geYZE9bHt8TsJb0bFufazQzlu8uhWEjGo8tWz+yfqWLUpkWfvNPDdafNOhWbVRqbTR8nN/MPxjLx6WrxxijlIILWbHcoSiXqAk0+ov87iYW+a1UOjWFuGg5T2MXzU4Nxeyj49yEhl5WSg+qyPcapRJiGU8WM6AxELcp5FzGZ6bF3nHX93xhKP06DcffFYfvd15vv2KrYQHmSexXz6T0bqBsH9Ek1GKclyAAHKvkghYw/UocbU1l/z9tedxIrKHIREH9ok04E9IEMPiIN27BKIko2GBrGeVOzVylcnz4sZveN/SxZS6Qunyl7X3EQsAgwlyDvhqpXhcA4qpF5BdA0aKGfnOjTMzJU38ZL0PltDtwL1ulH+97PLIhQb+kwq9VNx7MulIdROwrV5IQkFVd4ot9POA/aHnao6+hAw3BbDdiNjYMKZTd10Zz+GIX4p25EMrp8ywfCr73d+4EbCF+2T+SVYohWuDzWXQb1SQpegLMrzZGogUsTQAteTeOxjK4AJxRLUrg7BKq92EUL1o6CuD04bmpiva07yuA2rMgeDmXbrq53oUO0s8D9Vp+2H5DR5oOSaJX8jQ/Jp5oxHDXSO5YA1314AjfM4ntau1MVQbR/e/BCw='
     app: dogbook-vlad
