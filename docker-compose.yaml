@@ -8,3 +8,9 @@ services:
       - PG_TRUST_LOCALNET=true
     ports:
       - '5432:5432'
+
+  redis:
+    image: redis
+    container_name: dogbook-redis
+    ports:
+      - '6379:6379'

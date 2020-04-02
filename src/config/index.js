@@ -1,11 +1,11 @@
 /* eslint-disable no-process-env, import/first, global-require */
 'use strict'
 
-const env = process.env.NODE_ENV || 'local'
+const env = process.env.NODE_ENV || 'development'
 
 // Load process.env variables from .env file (when developing locally)
 // !! Do not move these lines, config variables have to be loaded before default config is loaded.
-if (env === 'local') {
+if (env === 'development') {
   require('dotenv').config({ silent: false })
 }
 
