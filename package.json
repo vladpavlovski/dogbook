@@ -9,6 +9,7 @@
     "start": "node src/app.js",
     "dev": "nodemon --watch src --ext js --exec 'nf start -j Procfile.dev'",
     "lint": "eslint .",
+    "snyk": "snyk auth $SNYK_TOKEN && snyk test",
     "migrate:make": "knex migrate:make --knexfile ./src/database/knexfile.js",
     "db:migrate": "knex migrate:latest --knexfile ./src/database/knexfile.js",
     "db:seed": "knex seed:run --knexfile ./src/database/knexfile.js",
@@ -41,6 +42,7 @@
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-compress": "^3.0.0",
+    "koa-helmet": "^5.2.0",
     "koa-router": "^8.0.8",
     "node-fetch": "^2.6.0",
     "objection": "^2.1.3",
@@ -68,6 +70,7 @@
     "pino-pretty": "^3.6.1",
     "prettier": "^2.0.2",
     "sinon": "^9.0.1",
+    "snyk": "^1.305.0",
     "supertest-koa-agent": "^0.3.2"
   }
 }
