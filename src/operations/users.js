@@ -6,7 +6,7 @@ const logger = require('./../utils/logger')
 const crypto = require('./../utils/crypto')
 
 async function login(input) {
-  logger.info({ input }, 'login start')
+  logger.info('login start')
   const user = await userRepository.findByEmail(input.email.toLowerCase())
   if (!user) {
     throw new errors.UnauthorizedError()
@@ -25,7 +25,7 @@ async function login(input) {
 }
 
 async function signUp(input) {
-  logger.info({ input }, 'signUp start')
+  logger.info('signUp start')
   const user = {
     name: input.name,
     email: input.email.toLowerCase(),
@@ -64,8 +64,24 @@ async function verifyTokenPayload(input) {
   }
 }
 
+async function getById(id) {
+  const user = await userRepository.findById(id)
+  if (!user) {
+    throw new errors.NotFoundError()
+  }
+
+  return user
+}
+
+async function getByIds(ids) {
+  const users = await userRepository.findByIds(ids)
+  return users
+}
+
 module.exports = {
   login,
   signUp,
   verifyTokenPayload,
+  getById,
+  getByIds,
 }

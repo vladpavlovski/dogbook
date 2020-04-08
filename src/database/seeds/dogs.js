@@ -5,8 +5,8 @@ exports.seed = (knex) => {
     .then(() => {
       // Inserts seed entries
       return knex('dogs').insert([
-        { name: 'Loolz', breed: 'Akita', birth_year: 2010 },
-        { name: 'Chacha', breed: 'Leonberg', birth_year: 2012 },
+        { name: 'Loolz', breed: 'Akita', birth_year: 2010, user_id: 1 },
+        { name: 'Chacha', breed: 'Leonberg', birth_year: 2012, user_id: 1 },
         { name: 'Salsa', breed: 'Redbone', birth_year: 2016 },
       ])
     })

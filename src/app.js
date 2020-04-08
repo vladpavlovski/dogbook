@@ -8,6 +8,7 @@ const koaCors = require('kcors')
 const router = require('./routes')
 const config = require('./config')
 const log = require('./utils/logger')
+const { addGraphQL } = require('./graphql')
 
 const services = {
   server: null,
@@ -21,7 +22,7 @@ app.use(koaBody())
 app.use(koaHelmet())
 
 app.use(router)
-
+addGraphQL(app)
 // Define start method
 app.start = async () => {
   log.info('Starting app…')

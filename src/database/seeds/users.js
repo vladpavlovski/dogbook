@@ -4,12 +4,13 @@ exports.seed = (knex) => {
     .del()
     .then(() => {
       // Inserts seed entries
-      // password in hash: $2b$10$zpXKmqEx.k.CbVCiXiFN3enlK8y43qtADOQyVIFYAQOLCOywwPjsq
+      // word password in hash: $2b$10$zpXKmqEx.k.CbVCiXiFN3enlK8y43qtADOQyVIFYAQOLCOywwPjsq
       return knex('users').insert([
         {
           email: 'vladislav.pavlovski@gmail.com',
           name: 'Vlad',
-          password: 'password',
+          password:
+            '$2b$10$zpXKmqEx.k.CbVCiXiFN3enlK8y43qtADOQyVIFYAQOLCOywwPjsq',
           disabled: false,
         },
       ])
